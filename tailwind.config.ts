@@ -26,11 +26,14 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					light: 'hsl(var(--primary-light))',
+					dark: 'hsl(var(--primary-dark))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					foreground: 'hsl(var(--secondary-foreground))',
+					light: 'hsl(var(--secondary-light))'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
@@ -51,6 +54,11 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
+				},
+				health: {
+					good: 'hsl(var(--health-good))',
+					warning: 'hsl(var(--health-warning))',
+					danger: 'hsl(var(--health-danger))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -84,11 +92,36 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'slide-up': {
+					'0%': { transform: 'translateY(100%)' },
+					'100%': { transform: 'translateY(0%)' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'scale(0.95)' },
+					'100%': { opacity: '1', transform: 'scale(1)' }
+				},
+				'pulse-soft': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.8' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'slide-up': 'slide-up 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+				'fade-in': 'fade-in 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+				'pulse-soft': 'pulse-soft 2s ease-in-out infinite'
+			},
+			boxShadow: {
+				'soft': 'var(--shadow-soft)',
+				'card': 'var(--shadow-card)',
+				'floating': 'var(--shadow-floating)'
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-secondary': 'var(--gradient-secondary)',
+				'gradient-health': 'var(--gradient-health)'
 			}
 		}
 	},

@@ -2,41 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Eye Health App Design System - Medical-inspired minimalism */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 210 20% 98%;
+    --foreground: 215 25% 27%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 27%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 27%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Medical blue primary */
+    --primary: 210 100% 56%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 210 100% 65%;
+    --primary-dark: 210 100% 45%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Soft green secondary for health/wellness */
+    --secondary: 142 69% 58%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 142 69% 68%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Gentle grays */
+    --muted: 210 20% 95%;
+    --muted-foreground: 215 15% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 170 76% 64%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 20% 90%;
+    --input: 210 20% 96%;
+    --ring: 210 100% 56%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Eye health specific colors */
+    --health-good: 142 69% 58%;
+    --health-warning: 45 93% 58%;
+    --health-danger: 0 84% 60%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-light)));
+    --gradient-health: linear-gradient(135deg, hsl(var(--health-good)), hsl(var(--accent)));
+    
+    /* Shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(var(--primary) / 0.1);
+    --shadow-card: 0 4px 16px -4px hsl(var(--primary) / 0.15);
+    --shadow-floating: 0 8px 24px -8px hsl(var(--primary) / 0.2);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
