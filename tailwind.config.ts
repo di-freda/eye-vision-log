@@ -116,12 +116,17 @@ export default {
 			boxShadow: {
 				'soft': 'var(--shadow-soft)',
 				'card': 'var(--shadow-card)',
-				'floating': 'var(--shadow-floating)'
+				'floating': 'var(--shadow-floating)',
+				'retro': 'var(--shadow-retro)'
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-secondary': 'var(--gradient-secondary)',
-				'gradient-health': 'var(--gradient-health)'
+				'gradient-health': 'var(--gradient-health)',
+				'gradient-retro': 'var(--gradient-retro)'
+			},
+			fontFamily: {
+				'retro': ['Georgia', 'serif']
 			}
 		}
 	},

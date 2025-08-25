@@ -55,10 +55,12 @@ const EyeCareScreen = () => {
   return (
     <div className="space-y-6 py-6">
       {/* Welcome Section */}
-      <Card className="shadow-card bg-gradient-health text-white">
+      <Card className="shadow-retro border-2 border-secondary bg-gradient-health text-white">
         <CardContent className="p-6 text-center">
-          <Heart className="h-12 w-12 mx-auto mb-4 opacity-90" />
-          <h2 className="text-xl font-bold mb-2">Your Eye Health Matters</h2>
+          <div className="p-3 rounded-full bg-white/20 border-2 border-white/30 inline-block mb-4">
+            <Heart className="h-12 w-12 opacity-90" />
+          </div>
+          <h2 className="text-xl font-bold mb-2 font-retro">Your Eye Health Matters</h2>
           <p className="text-white/90 text-sm">
             Regular eye care and healthy habits help maintain good vision throughout life
           </p>
@@ -66,9 +68,9 @@ const EyeCareScreen = () => {
       </Card>
 
       {/* Daily Reminders */}
-      <Card className="shadow-card">
+      <Card className="shadow-retro border-2 border-border bg-card">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex items-center gap-2 font-retro">
             <Clock className="h-5 w-5 text-primary" />
             Daily Eye Care Tips
           </CardTitle>
@@ -77,14 +79,14 @@ const EyeCareScreen = () => {
           {healthTips.map((tip, index) => {
             const Icon = tip.icon;
             return (
-              <div key={index} className="flex items-start gap-3 p-3 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
-                <div className="p-2 rounded-lg bg-primary/10">
+              <div key={index} className="flex items-start gap-3 p-3 rounded-lg bg-muted/30 border-2 border-border hover:bg-muted/50 transition-colors">
+                <div className="p-2 rounded-lg bg-primary/20 border border-primary/30">
                   <Icon className="h-4 w-4 text-primary" />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <h4 className="font-medium text-sm">{tip.title}</h4>
-                    <span className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded">
+                    <h4 className="font-medium text-sm font-retro">{tip.title}</h4>
+                    <span className="text-xs text-muted-foreground bg-muted px-3 py-1 rounded-full border border-border">
                       {tip.category}
                     </span>
                   </div>
@@ -97,24 +99,24 @@ const EyeCareScreen = () => {
       </Card>
 
       {/* Common Conditions */}
-      <Card className="shadow-card">
+      <Card className="shadow-retro border-2 border-border bg-card">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex items-center gap-2 font-retro">
             <Shield className="h-5 w-5 text-primary" />
             Common Eye Conditions
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
           {commonConditions.map((condition, index) => (
-            <div key={index} className="p-3 border border-border rounded-lg">
+            <div key={index} className="p-3 border-2 border-border rounded-lg bg-muted/10">
               <div className="flex justify-between items-start mb-2">
-                <h4 className="font-medium text-sm">{condition.name}</h4>
-                <span className={`text-xs px-2 py-1 rounded-full ${
+                <h4 className="font-medium text-sm font-retro">{condition.name}</h4>
+                <span className={`text-xs px-3 py-1 rounded-full border-2 ${
                   condition.prevalence === 'Very Common' 
-                    ? 'bg-health-warning/10 text-health-warning'
+                    ? 'bg-health-warning/10 text-health-warning border-health-warning/30'
                     : condition.prevalence === 'Common'
-                    ? 'bg-primary/10 text-primary'
-                    : 'bg-muted text-muted-foreground'
+                    ? 'bg-primary/10 text-primary border-primary/30'
+                    : 'bg-muted text-muted-foreground border-border'
                 }`}>
                   {condition.prevalence}
                 </span>
@@ -126,9 +128,10 @@ const EyeCareScreen = () => {
       </Card>
 
       {/* Reminder Section */}
-      <Card className="shadow-soft bg-secondary/5 border-secondary/20">
+      <Card className="shadow-retro border-2 border-secondary bg-secondary/10">
         <CardContent className="p-4 text-center">
-          <div className="text-sm text-muted-foreground mb-2">💡 Remember</div>
+          <div className="text-2xl mb-2">💡</div>
+          <div className="text-sm text-muted-foreground mb-2 font-retro">Remember</div>
           <p className="text-sm font-medium">
             Schedule regular eye exams every 1-2 years, or as recommended by your optician
           </p>

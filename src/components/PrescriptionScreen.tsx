@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Plus, Eye, TrendingUp, TrendingDown, Minus } from 'lucide-react';
+import { Disc3, Eye, TrendingUp, TrendingDown, Minus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
@@ -38,20 +38,20 @@ const PrescriptionScreen = () => {
     <div className="space-y-6 py-6">
       {/* Progress Section */}
       {prescriptions.length > 1 && (
-        <Card className="shadow-card animate-fade-in">
+        <Card className="shadow-retro border-2 border-border bg-card animate-fade-in">
           <CardHeader className="pb-3">
-            <CardTitle className="text-lg flex items-center gap-2">
+            <CardTitle className="text-lg flex items-center gap-2 font-retro">
               <Eye className="h-5 w-5 text-primary" />
               Vision Progress
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 p-3 bg-muted/30 rounded-lg border border-border">
               {visionTrend === 'improving' && (
                 <>
                   <TrendingUp className="h-5 w-5 text-health-good" />
                   <div className="flex-1">
-                    <div className="text-sm font-medium text-health-good">Improving</div>
+                    <div className="text-sm font-medium text-health-good font-retro">Improving</div>
                     <div className="text-xs text-muted-foreground">Your vision is getting better</div>
                   </div>
                   <Progress value={75} className="w-20" />
@@ -61,7 +61,7 @@ const PrescriptionScreen = () => {
                 <>
                   <TrendingDown className="h-5 w-5 text-health-warning" />
                   <div className="flex-1">
-                    <div className="text-sm font-medium text-health-warning">Worsening</div>
+                    <div className="text-sm font-medium text-health-warning font-retro">Worsening</div>
                     <div className="text-xs text-muted-foreground">Consider scheduling a checkup</div>
                   </div>
                   <Progress value={40} className="w-20" />
@@ -71,7 +71,7 @@ const PrescriptionScreen = () => {
                 <>
                   <Minus className="h-5 w-5 text-primary" />
                   <div className="flex-1">
-                    <div className="text-sm font-medium text-primary">Stable</div>
+                    <div className="text-sm font-medium text-primary font-retro">Stable</div>
                     <div className="text-xs text-muted-foreground">No significant changes</div>
                   </div>
                   <Progress value={60} className="w-20" />
@@ -85,10 +85,12 @@ const PrescriptionScreen = () => {
       {/* Prescriptions Grid */}
       <div className="space-y-4">
         {prescriptions.length === 0 ? (
-          <Card className="shadow-soft">
+          <Card className="shadow-retro border-2 border-border bg-card">
             <CardContent className="flex flex-col items-center justify-center py-12">
-              <Eye className="h-16 w-16 text-muted-foreground/40 mb-4" />
-              <h3 className="text-lg font-medium text-muted-foreground mb-2">
+              <div className="p-4 rounded-lg bg-muted/30 border-2 border-border mb-4">
+                <Eye className="h-16 w-16 text-muted-foreground/40" />
+              </div>
+              <h3 className="text-lg font-medium text-muted-foreground mb-2 font-retro">
                 No prescriptions yet
               </h3>
               <p className="text-sm text-muted-foreground text-center mb-4">
@@ -98,21 +100,21 @@ const PrescriptionScreen = () => {
           </Card>
         ) : (
           prescriptions.map((prescription) => (
-            <Card key={prescription.id} className="shadow-card animate-fade-in hover:shadow-floating transition-all duration-200">
+            <Card key={prescription.id} className="shadow-retro border-2 border-border bg-card animate-fade-in hover:shadow-card transition-all duration-200">
               <CardContent className="p-4">
                 <div className="flex items-center justify-between mb-3">
-                  <div className="text-sm font-medium">
+                  <div className="text-sm font-medium font-retro">
                     {new Date(prescription.date).toLocaleDateString()}
                   </div>
-                  <div className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded-md">
+                  <div className="text-xs text-muted-foreground bg-muted px-3 py-1 rounded-full border border-border">
                     {prescription.type}
                   </div>
                 </div>
                 
                 <div className="grid grid-cols-2 gap-4">
                   {/* Right Eye */}
-                  <div className="space-y-1">
-                    <div className="text-xs font-medium text-muted-foreground">Right Eye</div>
+                  <div className="space-y-1 p-3 bg-muted/20 rounded-lg border border-border">
+                    <div className="text-xs font-medium text-muted-foreground font-retro">Right Eye</div>
                     <div className="space-y-1 text-sm">
                       <div>SPH: {prescription.rightEye.sph > 0 ? '+' : ''}{prescription.rightEye.sph}</div>
                       <div>CYL: {prescription.rightEye.cyl > 0 ? '+' : ''}{prescription.rightEye.cyl}</div>
@@ -121,8 +123,8 @@ const PrescriptionScreen = () => {
                   </div>
                   
                   {/* Left Eye */}
-                  <div className="space-y-1">
-                    <div className="text-xs font-medium text-muted-foreground">Left Eye</div>
+                  <div className="space-y-1 p-3 bg-muted/20 rounded-lg border border-border">
+                    <div className="text-xs font-medium text-muted-foreground font-retro">Left Eye</div>
                     <div className="space-y-1 text-sm">
                       <div>SPH: {prescription.leftEye.sph > 0 ? '+' : ''}{prescription.leftEye.sph}</div>
                       <div>CYL: {prescription.leftEye.cyl > 0 ? '+' : ''}{prescription.leftEye.cyl}</div>
@@ -136,13 +138,13 @@ const PrescriptionScreen = () => {
         )}
       </div>
 
-      {/* Floating Add Button */}
+      {/* Floating Add Button - Retro Record Style */}
       <Button
         onClick={() => setShowForm(true)}
-        className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-floating bg-gradient-primary hover:scale-105 transition-transform duration-200"
+        className="fixed bottom-6 right-6 h-16 w-16 rounded-full shadow-retro bg-primary hover:bg-primary-dark border-2 border-border hover:scale-105 transition-all duration-200"
         size="icon"
       >
-        <Plus className="h-6 w-6" />
+        <Disc3 className="h-8 w-8 text-primary-foreground" />
       </Button>
 
       {/* Form Modal */}

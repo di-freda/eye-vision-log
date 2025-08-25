@@ -2,62 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Eye Health App Design System - Medical-inspired minimalism */
+/* EyeCare Tracker - Retro Vintage Design System */
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 215 25% 27%;
+    /* Retro cream/beige background */
+    --background: 45 31% 93%;
+    --foreground: 25 25% 25%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 27%;
+    /* Vintage card styling */
+    --card: 42 28% 88%;
+    --card-foreground: 25 25% 25%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 27%;
+    --popover: 42 28% 88%;
+    --popover-foreground: 25 25% 25%;
 
-    /* Medical blue primary */
-    --primary: 210 100% 56%;
+    /* Retro dusty rose primary */
+    --primary: 340 30% 55%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 210 100% 65%;
-    --primary-dark: 210 100% 45%;
+    --primary-light: 340 35% 65%;
+    --primary-dark: 340 25% 45%;
 
-    /* Soft green secondary for health/wellness */
-    --secondary: 142 69% 58%;
+    /* Vintage sage green secondary */
+    --secondary: 120 20% 55%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-light: 142 69% 68%;
+    --secondary-light: 120 25% 65%;
 
-    /* Gentle grays */
-    --muted: 210 20% 95%;
-    --muted-foreground: 215 15% 55%;
+    /* Warm vintage grays */
+    --muted: 40 15% 85%;
+    --muted-foreground: 30 10% 45%;
 
-    --accent: 170 76% 64%;
+    /* Retro accent colors */
+    --accent: 200 25% 60%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 15 60% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 90%;
-    --input: 210 20% 96%;
-    --ring: 210 100% 56%;
+    /* Vintage borders and inputs */
+    --border: 30 15% 65%;
+    --input: 40 20% 90%;
+    --ring: 340 30% 55%;
 
-    --radius: 0.75rem;
+    --radius: 0.375rem;
 
-    /* Eye health specific colors */
-    --health-good: 142 69% 58%;
-    --health-warning: 45 93% 58%;
-    --health-danger: 0 84% 60%;
+    /* Retro health indicators */
+    --health-good: 120 25% 50%;
+    --health-warning: 45 70% 55%;
+    --health-danger: 15 60% 55%;
     
-    /* Gradients */
+    /* Vintage gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
     --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-light)));
-    --gradient-health: linear-gradient(135deg, hsl(var(--health-good)), hsl(var(--accent)));
+    --gradient-health: radial-gradient(circle, hsl(var(--health-good)), hsl(var(--accent)));
+    --gradient-retro: linear-gradient(45deg, hsl(45 31% 93%), hsl(42 28% 88%));
     
-    /* Shadows */
-    --shadow-soft: 0 2px 8px -2px hsl(var(--primary) / 0.1);
-    --shadow-card: 0 4px 16px -4px hsl(var(--primary) / 0.15);
-    --shadow-floating: 0 8px 24px -8px hsl(var(--primary) / 0.2);
+    /* Retro shadows */
+    --shadow-soft: 2px 2px 6px hsl(var(--foreground) / 0.15);
+    --shadow-card: 3px 3px 12px hsl(var(--foreground) / 0.2);
+    --shadow-floating: 4px 4px 16px hsl(var(--foreground) / 0.25);
+    --shadow-retro: inset 1px 1px 2px hsl(0 0% 100% / 0.5), 2px 2px 4px hsl(var(--foreground) / 0.2);
     
-    /* Animations */
+    /* Smooth vintage transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
