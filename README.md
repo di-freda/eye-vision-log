@@ -1,13 +1,15 @@
-# Welcome to your Lovable project
+# Eye Vision Log 👓
 
-**URL**: https://lovable.dev/projects/4afbedc4-8fd3-42b4-b123-6b9ff80e4951
+🔗**URL**: https://lovable.dev/projects/4afbedc4-8fd3-42b4-b123-6b9ff80e4951
 
-## Project brief
+---
+
+## Project brief 📝
 
 I want to make a web app where I can input my history of glasses prescriptions as well as any appointments I have or follow up appointments I need to book based on any notes I add from each appointment. The interface should look minimal but also modern.
 (_I decided to change this to create a retro game style, and prompted Lovable to do such. However, I was not satisfied with the design it came up with, so I decided to utilise my creative skills and design the interface the way I want it on Figma and then adjust the code accordingly_)
 
-## Feature
+## Feature 🗂️
 
 When the user opens the app, there are 3 tabs which leads to 3 separate screens:
 
@@ -39,7 +41,7 @@ The third screen will be for general eye care labelled as "Eye Care". This scree
 - Tips and recommendations for maintaining good eye health based on the user's prescription history.
 
 
-## How can I edit this code?
+## How can I edit this code? 🔖
 
 There are two ways to edit this code:
 
@@ -74,7 +76,7 @@ npm run dev
 - Edit files directly within the Codespace and commit and push your changes once you're done.
 
 
-## What technologies are used for this project?
+## What technologies are used for this project? ⚙️
 
 This project is built with:
 
